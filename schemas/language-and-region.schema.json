@@ -1,0 +1,42 @@
+{
+  "type": "object",
+  "required": [
+    "primary_language",
+    "secondary_languages",
+    "creator_region",
+    "confidence",
+    "evidence"
+  ],
+  "properties": {
+    "primary_language": {
+      "type": "string",
+      "pattern": "^[a-z]{2}$"
+    },
+    "secondary_languages": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z]{2}$"
+      }
+    },
+    "creator_region": {
+      "type": "string",
+      "pattern": "^[A-Z]{2}$"
+    },
+    "audience_region_hints": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[A-Z]{2}$"
+      }
+    },
+    "confidence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "evidence": {
+      "type": "string"
+    }
+  }
+}

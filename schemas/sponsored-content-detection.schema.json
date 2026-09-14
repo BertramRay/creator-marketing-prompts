@@ -1,0 +1,74 @@
+{
+  "type": "object",
+  "required": [
+    "posts",
+    "brands_summary"
+  ],
+  "properties": {
+    "posts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "collab_type",
+          "brands",
+          "disclosure",
+          "evidence"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "collab_type": {
+            "type": "string",
+            "enum": [
+              "paid_likely",
+              "mention_only",
+              "none"
+            ]
+          },
+          "brands": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "disclosure": {
+            "type": "string",
+            "enum": [
+              "clear",
+              "weak",
+              "missing",
+              "n/a"
+            ]
+          },
+          "evidence": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "brands_summary": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "brand",
+          "post_ids"
+        ],
+        "properties": {
+          "brand": {
+            "type": "string"
+          },
+          "post_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }
+}

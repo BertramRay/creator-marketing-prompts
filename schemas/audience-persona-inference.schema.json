@@ -1,0 +1,57 @@
+{
+  "type": "object",
+  "required": [
+    "age_band",
+    "gender_skew",
+    "interests",
+    "purchasing_power",
+    "signals",
+    "confidence"
+  ],
+  "properties": {
+    "age_band": {
+      "type": "string"
+    },
+    "gender_skew": {
+      "type": "string",
+      "enum": [
+        "mostly_male",
+        "mostly_female",
+        "balanced",
+        "unknown"
+      ]
+    },
+    "interests": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "purchasing_power": {
+      "type": "string",
+      "enum": [
+        "low",
+        "medium",
+        "high",
+        "unknown"
+      ]
+    },
+    "geography_signals": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "signals": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "confidence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    }
+  }
+}

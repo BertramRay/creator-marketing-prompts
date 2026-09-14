@@ -1,0 +1,35 @@
+{
+  "type": "object",
+  "required": [
+    "authenticity",
+    "patterns",
+    "comment_quality"
+  ],
+  "properties": {
+    "authenticity": {
+      "type": "string",
+      "enum": [
+        "likely_organic",
+        "mixed",
+        "suspicious"
+      ]
+    },
+    "patterns": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "comment_quality": {
+      "type": "string",
+      "enum": [
+        "high",
+        "mixed",
+        "low"
+      ]
+    },
+    "notes": {
+      "type": "string"
+    }
+  }
+}

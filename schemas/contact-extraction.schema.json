@@ -1,0 +1,55 @@
+{
+  "type": "object",
+  "required": [
+    "emails",
+    "handles",
+    "contact_type",
+    "evidence"
+  ],
+  "properties": {
+    "emails": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "email"
+      }
+    },
+    "handles": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "platform",
+          "handle"
+        ],
+        "properties": {
+          "platform": {
+            "type": "string"
+          },
+          "handle": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "contact_page_urls": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "contact_type": {
+      "type": "string",
+      "enum": [
+        "creator",
+        "agency_or_manager",
+        "mixed",
+        "none"
+      ]
+    },
+    "evidence": {
+      "type": "string",
+      "description": "Short quote(s) from the input that support the extraction"
+    }
+  }
+}

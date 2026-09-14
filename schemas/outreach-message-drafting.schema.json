@@ -1,0 +1,20 @@
+{
+  "type": "object",
+  "required": [
+    "subject",
+    "body",
+    "content_reference"
+  ],
+  "properties": {
+    "subject": {
+      "type": "string"
+    },
+    "body": {
+      "type": "string"
+    },
+    "content_reference": {
+      "type": "string",
+      "description": "The specific post referenced"
+    }
+  }
+}

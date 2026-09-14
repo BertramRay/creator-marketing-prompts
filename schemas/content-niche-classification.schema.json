@@ -1,0 +1,36 @@
+{
+  "type": "object",
+  "required": [
+    "primary_niche",
+    "secondary_niches",
+    "content_formats",
+    "recurring_topics"
+  ],
+  "properties": {
+    "primary_niche": {
+      "type": "string"
+    },
+    "secondary_niches": {
+      "type": "array",
+      "maxItems": 3,
+      "items": {
+        "type": "string"
+      }
+    },
+    "content_formats": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "recurring_topics": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "notes": {
+      "type": "string"
+    }
+  }
+}

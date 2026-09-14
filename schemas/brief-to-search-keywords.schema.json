@@ -1,0 +1,35 @@
+{
+  "type": "object",
+  "required": [
+    "product_terms",
+    "problem_terms",
+    "adjacent_niches",
+    "format_terms"
+  ],
+  "properties": {
+    "product_terms": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "problem_terms": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "adjacent_niches": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "format_terms": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

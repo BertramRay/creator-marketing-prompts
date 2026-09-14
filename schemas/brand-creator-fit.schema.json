@@ -1,0 +1,71 @@
+{
+  "type": "object",
+  "required": [
+    "fit_score",
+    "verdict",
+    "axes",
+    "reasons_for",
+    "reasons_against"
+  ],
+  "properties": {
+    "fit_score": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "verdict": {
+      "type": "string",
+      "enum": [
+        "strong_fit",
+        "possible_fit",
+        "poor_fit"
+      ]
+    },
+    "axes": {
+      "type": "object",
+      "required": [
+        "audience_match",
+        "content_match",
+        "credibility",
+        "risk"
+      ],
+      "properties": {
+        "audience_match": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 10
+        },
+        "content_match": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 10
+        },
+        "credibility": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 10
+        },
+        "risk": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 10
+        }
+      }
+    },
+    "reasons_for": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "reasons_against": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "suggested_angle": {
+      "type": "string"
+    }
+  }
+}
