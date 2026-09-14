@@ -39,12 +39,18 @@ def main() -> None:
     values = json.loads(Path(args.input_json).read_text(encoding="utf-8"))
     schema = json.loads((ROOT / "schemas" / f"{args.slug}.schema.json").read_text(encoding="utf-8"))
 
+    user_message = (
+        fill(user_template, values)
+        + "\n\nReturn a single JSON object that conforms exactly to this JSON Schema "
+        + "(use these property names, no others):\n"
+        + json.dumps(schema, ensure_ascii=False)
+    )
     client = OpenAI()
     response = client.chat.completions.create(
         model=args.model,
         temperature=0,
         response_format={"type": "json_object"},
-        messages=[{"role": "system", "content": system}, {"role": "user", "content": fill(user_template, values)}],
+        messages=[{"role": "system", "content": system}, {"role": "user", "content": user_message}],
     )
     result = json.loads(response.choices[0].message.content)
     validate(result, schema)

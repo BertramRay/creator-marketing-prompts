@@ -35,7 +35,7 @@ export OPENAI_API_KEY=...            # or point OPENAI_BASE_URL at any compatibl
 python examples/run.py contact-extraction examples/inputs/contact-extraction.json
 ```
 
-The runner loads the prompt file, fills the user template from your JSON input, asks for a JSON object, and validates the reply against the schema.
+The runner loads the prompt file, fills the user template from your JSON input, appends the output schema to the request, asks for a JSON object, and validates the reply against the schema. If your provider supports native structured outputs, pass the schema there instead of in the message.
 
 ## Design notes
 
